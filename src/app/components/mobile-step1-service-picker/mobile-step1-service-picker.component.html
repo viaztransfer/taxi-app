@@ -1,0 +1,49 @@
+<header id="header" class="main-header inner-page-header">
+  <div class="custom-container">
+    <div class="header-panel">
+      <div class="flex-spacing gap-2 w-100">
+        <a (click)="back.emit()"><i class="iconsax icon-btn" data-icon="chevron-left"></i></a>
+      </div>
+    </div>
+  </div>
+</header>
+
+<section class="location-section pt-0">
+  <div class="custom-container">
+    <ul class="pickup-location-listing">
+      <li>
+        <div class="location-box">
+          <img class="icon" src="assets/images/svg/location-fill.svg" alt="location">
+          <input #originRef [(ngModel)]="origin" class="form-control" placeholder="{{ modo==='hora' ? 'Lugar de recogida' : 'Origen' }}">
+        </div>
+      </li>
+
+      <li *ngIf="modo!=='hora'">
+        <div class="location-box">
+          <img class="icon" src="assets/images/svg/gps.svg" alt="gps">
+          <input #destRef [(ngModel)]="destination" class="form-control border-0" placeholder="Destino">
+          <i class="iconsax add-stop" data-icon="add"></i>
+        </div>
+      </li>
+    </ul>
+
+    <div class="mt-3 d-flex gap-2">
+      <button class="btn btn-sm btn-outline-secondary" (click)="useMyLocation()">Usar mi ubicación</button>
+      <button class="btn btn-sm btn-outline-secondary" (click)="swap()" *ngIf="modo!=='hora'">Invertir</button>
+    </div>
+
+    <div class="mt-3">
+      <div #mapRef class="location-map position-relative w-100" style="height:260px;border-radius:12px;overflow:hidden;"></div>
+    </div>
+  </div>
+
+  <div class="fixed-btn">
+    <div class="custom-container">
+      <a class="btn theme-btn w-100"
+      [class.disabled]="!origin.trim() || (modo!=='hora' && !destination.trim())"
+         (click)="next()">Continuar</a>
+    </div>
+  </div>
+
+  <section class="panel-space"></section>
+</section>

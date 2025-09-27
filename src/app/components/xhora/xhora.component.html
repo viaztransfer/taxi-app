@@ -1,0 +1,64 @@
+<header id="header" class="main-header inner-page-header position-absolute bg-transparent">
+    <div class="custom-container">
+        <div class="header-panel p-0">
+            <a (click)="virtual.setActiveRoute('service')">
+                <i class="iconsax icon-btn" data-icon="chevron-left"> </i>
+            </a>
+        </div>
+    </div>
+</header>
+<!-- Select ride section starts -->
+<div class="location-map position-relative w-100 h-100" id="map"></div>
+<div class="theme-content-bg">
+    <h5>Seleccione las horas a contratar</h5>
+    <ul class="package-list">
+        <li>
+            <input type="radio" class="btn-check" name="options-base" id="btn-check-1" checked>
+            <label class="btn package-box" for="btn-check-1">
+                <span class="time">2 hr</span>
+                <span class="distance">40 km</span>
+            </label>
+        </li>
+        <li>
+            <input type="radio" class="btn-check" name="options-base" id="btn-check-2">
+            <label class="btn package-box" for="btn-check-2">
+                <span class="time">4 hr</span>
+                <span class="distance">80 km</span>
+            </label>
+        </li>
+
+        <li>
+            <input type="radio" class="btn-check" name="options-base" id="btn-check-3">
+            <label class="btn package-box" for="btn-check-3">
+                <span class="time">6 hr</span>
+                <span class="distance">120 km</span>
+            </label>
+        </li>
+        <li>
+            <input type="radio" class="btn-check" name="options-base" id="btn-check-4">
+            <label class="btn package-box" for="btn-check-4">
+                <span class="time">8 hr</span>
+                <span class="distance">160 km</span>
+            </label>
+        </li>
+        <li>
+            <input type="radio" class="btn-check" name="options-base" id="btn-check-5">
+            <label class="btn package-box" for="btn-check-5">
+                <span class="time">12 hr</span>
+                <span class="distance">180 km</span>
+            </label>
+        </li>
+    </ul>
+
+    <div class="notes-part rental-note">
+        <h6>Múltiples paradas, los mejores conductores, tarifas asequibles y más alquileres de viajes.</h6>
+    </div>
+
+    <div class="custom-container">
+        <a (click)="virtual.setActiveRoute('xhoradetail')" class="btn theme-btn px-3 mb-3 w-100">Seleccione la hora</a>
+    </div>
+</div>
+
+<!-- panel-space start -->
+<section class="panel-space"></section>
+<!-- panel-space end -->

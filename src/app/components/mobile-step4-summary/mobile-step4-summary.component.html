@@ -1,0 +1,42 @@
+<header id="header" class="main-header inner-page-header position-absolute bg-transparent">
+    <div class="custom-container">
+      <div class="header-panel p-0">
+        <a (click)="back.emit()"><i class="iconsax icon-btn" data-icon="chevron-left"></i></a>
+      </div>
+    </div>
+  </header>
+  
+  <!-- mapa si NO es por hora -->
+  <div *ngIf="tipo!=='hora'" class="location-map position-relative w-100 h-100" #mapEl></div>
+  
+  <div class="theme-content-bg">
+    <h5>Resumen del viaje</h5>
+  
+    <div class="vehicle-info">
+      <div>
+        <div class="flex-align-center gap-1">
+          <h4 class="fw-medium title-color">Vehículo</h4>
+          <i class="iconsax icon" data-icon="car"></i>
+        </div>
+        <h6 class="fw-normal content-color mt-1">
+          {{data?.origin}}
+          <span *ngIf="tipo!=='hora'"> / {{data?.destination}}</span>
+        </h6>
+      </div>
+    </div>
+  
+    <div class="amount-part">
+      <div class="total flex-spacing">
+        <h4 class="fw-medium title-color">
+          Total
+          <span class="fw-semibold">{{data?.precio | currency:'MXN'}}</span>
+        </h4>
+        <a class="btn theme-btn p-2 d-inline-block m-0 pay-btn" (click)="confirm.emit()">Pagar ahora</a>
+      </div>
+    </div>
+  
+    <div class="custom-container">
+      <a class="btn theme-btn w-100 my-3 auth-btn" (click)="confirm.emit()">Reservar y pagar</a>
+    </div>
+  </div>
+  

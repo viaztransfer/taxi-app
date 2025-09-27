@@ -1,0 +1,22 @@
+
+<div class="app-container">
+<app-sidebar></app-sidebar>
+ <app-header></app-header>
+ <div class="app-content">
+ <app-home *ngIf="virtual.activeRoute === 'home'"></app-home>
+ <app-myrides *ngIf="virtual.activeRoute === 'myrides'"></app-myrides>
+<app-search-location *ngIf="virtual.activeRoute === 'search-location'"></app-search-location>
+<app-select-auto *ngIf="virtual.activeRoute === 'select-auto'"></app-select-auto>
+<app-service *ngIf="virtual.activeRoute === 'service'"></app-service>
+<app-xhora *ngIf="virtual.activeRoute === 'xhora'"></app-xhora>
+<app-xhoradetail *ngIf="virtual.activeRoute === 'xhoradetail'"></app-xhoradetail>
+<app-resumen *ngIf="virtual.activeRoute==='resumen'"></app-resumen>
+<app-mobile-booking *ngIf="virtual.activeRoute==='mobile-booking'"></app-mobile-booking>
+<app-mobile-step2-form *ngIf="virtual.activeRoute==='mobile-step2-form'"></app-mobile-step2-form>
+<app-mobile-step3-summary *ngIf="virtual.activeRoute==='mobile-step3-summary'"></app-mobile-step3-summary>
+<app-mobile-step1-service-picker *ngIf="virtual.activeRoute==='mobile-step1-service-picker'"></app-mobile-step1-service-picker>
+<app-mobile-step4-summary *ngIf="virtual.activeRoute==='mobile-step4-summary'"></app-mobile-step4-summary>
+</div>
+<app-bottombar></app-bottombar>
+
+</div>

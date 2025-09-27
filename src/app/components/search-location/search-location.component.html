@@ -1,0 +1,134 @@
+ <!-- header starts -->
+ <header id="header" class="main-header inner-page-header">
+    <div class="custom-container">
+        <div class="header-panel">
+            <div class="flex-spacing gap-2 w-100">
+                <a (click)="virtual.setActiveRoute('service')">
+                    <i class="iconsax icon-btn" data-icon="chevron-left"> </i>
+                </a>
+
+               
+            </div>
+        </div>
+    </div>
+</header>
+<!-- header end -->
+ <!-- location section starts -->
+ <section class="location-section pt-0">
+    <div class="custom-container">
+        <ul class="pickup-location-listing">
+            <li>
+                <div class="location-box">
+                    <img class="icon" src="../../assets/images/svg/location-fill.svg" alt="location">
+                    <input type="text" id="inputpickup" class="form-control" placeholder="Origen">
+                </div>
+            </li>
+            <li>
+                <div class="location-box">
+                    <img class="icon" src="../../assets/images/svg/gps.svg" alt="gps">
+                    <input type="text" id="inputdestination" class="form-control border-0"
+                        placeholder="Destino">
+                    <i class="iconsax add-stop" data-icon="add"></i>
+                </div>
+            </li>
+        </ul>
+    </div>
+</section>
+<!-- location section starts -->
+
+<!-- categories place list starts -->
+<!-- <section class="category-place-section">
+    <div class="custom-container">
+        <ul class="categories-place-list">
+            <li>
+                <a (click)="virtual.setActiveRoute('select-auto')" class="categories-place-box">
+                    <img class="place-icon" src="../../assets/images/svg/home-fill.svg" alt="home">
+                    <h5>ir</h5>
+                </a>
+            </li>
+            <li>
+                <a href="search-location.html#" class="categories-place-box">
+                    <img class="place-icon" src="../../assets/images/svg/work-fill.svg" alt="home">
+                    <h5>Work</h5>
+                </a>
+            </li>
+        </ul>
+    </div>
+</section> -->
+<!-- categories place list end -->
+
+<!-- recent search list starts -->
+ <section>
+    <div class="custom-container">
+        <h3 class="title-color fw-medium mb-2">Recientes</h3>
+        <ul class="recent-place-list">
+            <li>
+                <div class="recent-box">
+                    <div class="recent-icon">
+                        <img class="icon" src="../../assets/images/svg/history.svg" alt="history">
+                    </div>
+                    <div>
+                        <h5>Koramangala</h5>
+                        <p>17600 Yonge St., Toronto, L3Y 4Z1</p>
+                    </div>
+                </div>
+            </li>
+            <li>
+                <div class="recent-box">
+                    <div class="recent-icon">
+                        <img class="icon" src="../../assets/images/svg/history.svg" alt="history">
+                    </div>
+                    <div>
+                        <h5>Purdys Chocolatier</h5>
+                        <p> 149 St. John Street, Oshawa, L1H 7M3</p>
+                    </div>
+                </div>
+            </li>
+            <li>
+                <div class="recent-box">
+                    <div class="recent-icon">
+                        <img class="icon" src="../../assets/images/svg/history.svg" alt="history">
+                    </div>
+                    <div>
+                        <h5>Toronto Eaton Centre</h5>
+                        <p>1222 Ross Street, Toronto, H3B 4W8</p>
+                    </div>
+                </div>
+            </li>
+            <li>
+                <div class="recent-box">
+                    <div class="recent-icon">
+                        <img class="icon" src="../../assets/images/svg/history.svg" alt="history">
+                    </div>
+                    <div>
+                        <h5>Toronto PATH</h5>
+                        <p> 486 Eglinton Avenue, Montreal, M4P 1A6</p>
+                    </div>
+                </div>
+            </li>
+            <li>
+                <div class="recent-box">
+                    <div class="recent-icon">
+                        <img class="icon" src="../../assets/images/svg/history.svg" alt="history">
+                    </div>
+                    <div>
+                        <h5>Purdys Chocolatier</h5>
+                        <p> 659 Tanner Street, Vancouver, V5R 2T4</p>
+                    </div>
+                </div>
+            </li>
+        </ul>
+    </div>
+
+    <div class="fixed-btn">
+        <div class="custom-container">
+            <a (click)="virtual.setActiveRoute('select-auto')" data-bs-toggle="offcanvas" class="btn theme-btn w-100">Buscar</a>
+        </div>
+    </div>
+</section> 
+<!-- recent search list end -->
+
+
+<!-- panel-space start -->
+<section class="panel-space"></section>
+<!-- panel-space end -->

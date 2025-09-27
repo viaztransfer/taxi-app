@@ -1,0 +1,43 @@
+<div class="navbar-menu">
+    <ul>
+        <li class="active">
+            <a  (click)="virtual.setActiveRoute('home')">
+                <div class="icon">
+                    <img class="active" src="assets/images/svg/home.svg" alt="home">
+                    <!-- <img class="active" src="assets/images/svg/home-fill.svg" alt="home"> -->
+                </div>
+                <span class="active">Inicio</span>
+            </a>
+        </li>
+
+        <li>
+            <a (click)="virtual.setActiveRoute('service')">
+                <div class="icon">
+                    <img class="unactive" src="assets/images/svg/category.svg" alt="category">
+                    <img class="active" src="assets/images/svg/category-fill.svg" alt="category">
+                </div>
+                <span>Nuevo servicio</span>
+            </a>
+        </li>
+
+        <li>
+            <a (click)="virtual.setActiveRoute('myrides')">
+                <div class="icon">
+                    <img class="unactive" src="assets/images/svg/car.svg" alt="car">
+                    <img class="active" src="assets/images/svg/car-fill.svg" alt="car">
+                </div>
+                <span>Mis viajes</span>
+            </a>
+        </li>
+
+        <li>
+            <a >
+                <div class="icon">
+                    <img class="unactive" src="assets/images/svg/setting.svg" alt="setting">
+                    <img class="active" src="assets/images/svg/setting-fill.svg" alt="setting">
+                </div>
+                <span>Setting</span>
+            </a>
+        </li>
+    </ul>
+</div>

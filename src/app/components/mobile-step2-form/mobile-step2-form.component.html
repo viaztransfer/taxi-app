@@ -1,0 +1,78 @@
+<header id="header" class="main-header inner-page-header position-absolute bg-transparent">
+    <div class="custom-container">
+      <div class="header-panel p-0">
+        <a (click)="back.emit()"><i class="iconsax icon-btn" data-icon="chevron-left"></i></a>
+      </div>
+    </div>
+  </header>
+  
+  <div class="custom-container" style="margin-top:16px">
+    <div class="mb-2 small content-color">Origen</div>
+    <div class="fw-medium mb-3">{{ origin }}</div>
+    <div class="mb-2 small content-color">Destino</div>
+    <div class="fw-medium">{{ destination }}</div>
+  </div>
+  
+  <!-- Contadores -->
+  <div class="custom-container mt-3">
+    <div class="row g-2">
+      <div class="col-4">
+        <div class="quantity-wrapper">
+          <label class="quantity-label">Pasajeros</label>
+          <div class="quantity-control">
+            <button type="button" class="qty-btn" (click)="dec('pax')">−</button>
+            <span class="qty-value">{{pax}}</span>
+            <button type="button" class="qty-btn" (click)="inc('pax')">+</button>
+          </div>
+        </div>
+      </div>
+      <div class="col-4">
+        <div class="quantity-wrapper">
+          <label class="quantity-label">Maletas</label>
+          <div class="quantity-control">
+            <button type="button" class="qty-btn" (click)="dec('bags')">−</button>
+            <span class="qty-value">{{bags}}</span>
+            <button type="button" class="qty-btn" (click)="inc('bags')">+</button>
+          </div>
+          <small class="text-muted d-block mt-1">Máx: {{LIM_CAP[categoria].m}}</small>
+        </div>
+      </div>
+      <div class="col-4">
+        <div class="quantity-wrapper">
+          <label class="quantity-label">Sillas bebé</label>
+          <div class="quantity-control">
+            <button type="button" class="qty-btn" (click)="dec('baby')">−</button>
+            <span class="qty-value">{{baby}}</span>
+            <button type="button" class="qty-btn" (click)="inc('baby')">+</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <!-- Categorías -->
+  <h5 class="custom-container mt-3">Categoría</h5>
+  <ul class="ride-tab custom-container">
+    <li class="w-100" *ngFor="let c of categorias">
+      <input type="radio" class="btn-check" [id]="c.id" name="cat"
+             [checked]="categoria===c.key" (change)="setCategoria(c.key)">
+      <label class="btn selact-ride-box" [for]="c.id">
+        <i class="iconsax icon" data-icon="info-circle"></i>
+        <img class="img-fluid vehicle-img" [src]="c.img" [alt]="c.label">
+        <span class="vehicle-name flex-spacing">
+          {{ c.label }}
+          <span class="flex-align-center fw-normal content-color">
+            <img class="user-icon" src="assets/images/svg/profile-fill.svg" alt="pax">
+            {{ c.cap }}
+          </span>
+        </span>
+      </label>
+    </li>
+  </ul>
+  
+  <div class="custom-container mt-3">
+    <a class="btn theme-btn px-3 mb-3 w-100" (click)="next()">Continuar</a>
+  </div>
+  
+  <section class="panel-space"></section>
+  

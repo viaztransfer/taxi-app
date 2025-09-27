@@ -1,0 +1,48 @@
+<!-- mobile-booking.component.html -->
+<ng-container [ngSwitch]="step">
+
+  <!-- Paso 1: buscar (elige origen/destino o pickup/horas según tipo) -->
+  <app-mobile-step1-service-picker
+    *ngSwitchCase="'buscar'"
+    [modo]="tipo"
+    (back)="goHome()"
+    (continue)="onSearchContinue($event)">
+  </app-mobile-step1-service-picker>
+
+  <!-- Paso 2: categoría (tipo de vehículo grande: sedán, minivan, suv, etc.) -->
+  <app-mobile-step2-form
+    *ngSwitchCase="'categoria'"
+    [origin]="origin"
+    [destination]="destination"
+    [tipo]="tipo"
+    [pax]="pax"
+    [bags]="bags"
+    [baby]="baby"
+    (back)="step='buscar'"
+    (continue)="onCategoryContinue($event)">
+  </app-mobile-step2-form>
+
+  <!-- Paso 3: subtipo (estándar/premium, 12 o 16 asientos, etc.) -->
+  <app-mobile-step3-summary
+    *ngSwitchCase="'subtipo'"
+    [origin]="origin"
+    [destination]="destination"
+    [pax]="pax"
+    [bags]="bags"
+    [baby]="baby"
+    [categoria]="categoria"
+    [tipo]="tipo"
+    (back)="step='categoria'"
+    (continue)="onSubtypeContinue($event)">
+  </app-mobile-step3-summary>
+
+  <!-- Paso 4: resumen (con totales y confirmación) -->
+  <app-mobile-step4-summary
+    *ngSwitchCase="'resumen'"
+    [tipo]="tipo"
+    [data]="resumen"
+    (back)="step='subtipo'"
+    (confirm)="confirmar()">
+  </app-mobile-step4-summary>
+
+</ng-container>
