@@ -1,0 +1,209 @@
+<!-- earning section starts -->
+<section>
+    <div class="custom-container">
+        <ul class="total-ride-list mt-0 p-0">
+            <li>
+                <div class="ride-box">
+                    <div class="flex-spacing gap-1">
+                        <h4>{{ stats.totalTrips }}</h4>
+                        <div class="ride-icon">
+                            <i class="iconsax icon" data-icon="wallet-open"></i>
+                        </div>
+                    </div>
+                    <div class="flex-spacing gap-1 mt-1">
+                        <h6 class="d-flex flex-wrap">Total Viajes</h6>
+                    </div>
+                </div>
+            </li>
+
+            <li>
+                <div class="ride-box">
+                    <div class="flex-spacing gap-1">
+                        <h4>{{ stats.completedTrips }}</h4>
+                        <div class="ride-icon">
+                            <i class="iconsax icon" data-icon="check"></i>
+                        </div>
+                    </div>
+                    <div class="flex-spacing gap-1 mt-1">
+                        <h6 class="d-flex flex-wrap">Completados</h6>
+                    </div>
+                </div>
+            </li>
+
+            <li>
+                <div class="ride-box">
+                    <div class="flex-spacing gap-1">
+                        <h4>{{ stats.pendingTrips }}</h4>
+                        <div class="ride-icon">
+                            <i class="iconsax icon" data-icon="clock"></i>
+                        </div>
+                    </div>
+                    <div class="flex-spacing gap-1 mt-1">
+                        <h6 class="d-flex flex-wrap">Pendientes</h6>
+                    </div>
+                </div>
+            </li>
+
+            <li>
+                <div class="ride-box">
+                    <div class="flex-spacing gap-1">
+                        <h4>{{ stats.cancelledTrips }}</h4>
+                        <div class="ride-icon">
+                            <i class="iconsax icon" data-icon="close-circle"></i>
+                        </div>
+                    </div>
+                    <div class="flex-spacing gap-1 mt-1">
+                        <h6 class="d-flex flex-wrap">Cancelados</h6>
+                    </div>
+                </div>
+            </li>
+        </ul>
+    </div>
+</section>
+<!-- earning section end -->
+
+<!-- upcoming ride section starts -->
+<section class="upcoming-ride-section">
+    <div class="custom-container">
+        <div class="title">
+            <h4>Próximos Viajes</h4>
+        </div>
+
+        <ul class="my-ride-list driver-ride-list mt-0">
+            <li *ngFor="let trip of trips">
+                <div class="my-ride-box">
+                    <div class="my-ride-head">
+                        <a class="my-ride-img">
+                            <img class="img-fluid profile-img" src="../../assets/images/profile/p5.png" alt="p5">
+                        </a>
+
+                        <div class="my-ride-content flex-column">
+                            <div class="flex-spacing">
+                                <a>
+                                    <h5 class="title-color fw-medium">{{ trip.Cliente }}</h5>
+                                </a>
+
+                                <div class="flex-align-center">
+                                    <div class="flex-align-center gap-1 pe-2">
+                                        <img class="star" src="../../assets/images/svg/star.svg" alt="star">
+                                        <h5 class="fw-normal title-color p-0">{{ trip.rating }}</h5>
+                                    </div>
+                                    <h5 class="fw-mediun theme-color price ps-2 pe-0">{{ trip.price }}</h5>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="my-ride-details">
+
+                        <!-- Badge de estado -->
+                        <div class="trip-status-badge" [ngClass]="trip.Status_del_servicio">
+                            {{ trip.Status_del_servicio | titlecase }}
+                        </div>
+
+                        <div class="ride-info">
+                            <div class="flex-align-center gap-1">
+                                <img class="icon img-fluid" src="../../assets/images/svg/location-fill.svg" alt="location">
+                                <h6 class="fw-normal title-color">{{ trip.Distancia }}</h6>
+                            </div>
+                            <h6 class="fw-normal title-color">{{ trip.Cliente }}</h6>
+                        </div>
+
+                        <ul class="ride-location-listing">
+                            <li class="border-0 shadow-none box-background">
+                                <div class="location-box bg-transparent">
+                                    <img class="icon" src="../../assets/images/svg/location-fill.svg" alt="location">
+                                    <h5 class="fw-light title-color">{{ trip.Origen }}</h5>
+                                </div>
+                            </li>
+
+                            <li class="border-0 shadow-none box-background">
+                                <div class="location-box bg-transparent">
+                                    <img class="icon" src="../../assets/images/svg/gps.svg" alt="gps">
+                                    <h5 class="fw-light title-color">{{ trip.Destino }}</h5>
+                                </div>
+                            </li>
+                        </ul>
+
+                        <!-- BOTÓN INICIAR -->
+                        <a *ngIf="trip.Status_del_servicio === 'pendiente'"
+                            (click)="openStartTripModal(trip)"
+                            class="btn theme-btn w-100 mt-3">
+                            Iniciar Viaje
+                        </a>
+
+                        <!-- BOTÓN FINALIZAR -->
+                        <a *ngIf="trip.Status_del_servicio === 'iniciado'"
+                            (click)="openFinishTripModal(trip)"
+                            class="btn theme-btn w-100 mt-3 bg-danger">
+                            Finalizar Viaje
+                        </a>
+
+                        <!-- Viaje Completado (sin botones) -->
+                        <div *ngIf="trip.Status_del_servicio === 'completado'" 
+                            class="btn theme-btn w-100 mt-3 bg-success disabled">
+                            Completado
+                        </div>
+
+                    </div>
+
+                </div>
+            </li>
+        </ul>
+    </div>
+</section>
+<!-- upcoming ride section end -->
+
+<section class="panel-space"></section>
+
+<!-- MODAL INICIAR VIAJE -->
+<div class="modal-backdrop" *ngIf="showStartModal">
+  <div class="modal-content">
+    <h4>Subir foto de inicio</h4>
+
+    <div class="profile-section">
+      <div class="profile-image">
+        <img [src]="previewStart || 'assets/default-camera.png'" class="img-fluid profile-pic">
+        <input type="file" accept="image/*" (change)="onSelectStartImage($event)">
+        <i class="iconsax upload-icon" data-icon="edit-2"></i>
+      </div>
+    </div>
+
+    <button class="btn theme-btn w-100 mt-3" 
+            (click)="confirmStartTrip()" 
+            [disabled]="!startImage">
+        Confirmar inicio
+    </button>
+
+    <button class="btn ghost-btn w-100 mt-2" 
+            (click)="showStartModal = false">
+        Cancelar
+    </button>
+  </div>
+</div>
+
+<!-- MODAL FINALIZAR VIAJE -->
+<div class="modal-backdrop" *ngIf="showFinishModal">
+  <div class="modal-content">
+    <h4>Subir foto final</h4>
+
+    <div class="profile-section">
+      <div class="profile-image">
+        <img [src]="previewEnd || 'assets/default-camera.png'" class="img-fluid profile-pic">
+        <input type="file" accept="image/*" (change)="onSelectFinishImage($event)">
+        <i class="iconsax upload-icon" data-icon="edit-2"></i>
+      </div>
+    </div>
+
+    <button class="btn theme-btn w-100 mt-3" 
+            (click)="confirmFinishTrip()" 
+            [disabled]="!endImage">
+        Confirmar finalización
+    </button>
+
+    <button class="btn ghost-btn w-100 mt-2" 
+            (click)="showFinishModal = false">
+        Cancelar
+    </button>
+  </div>
+</div>

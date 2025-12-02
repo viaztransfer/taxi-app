@@ -9,24 +9,24 @@
         <a href="user-app/profile-setting.html" class="profile-part flex-align-center gap-2">
             <img class="img-fluid profile-pic" src="assets/images/profile/p8.png" alt="p8">
             <div>
-                <h3>User</h3>
-                <span>Edit Account</span>
-            </div>
+                <h3>Usuario</h3>
+<!--                 <span>Edit Account</span>
+ -->            </div>
         </a>
         <ul class="link-section switch-section">
             <li class="active">
-                <a href="home.html" class="pages">
+                <a (click)="virtual.setActiveRoute('driver-home')" class="pages">
                     <i class="iconsax sidebar-icon" data-icon="home-2"> </i>
-                    <h3>Home</h3>
+                    <h3>Inicio</h3>
                 </a>
             </li>
             <li>
-                <a href="user-app/my-rides.html" class="pages">
+                <a (click)="virtual.setActiveRoute('myrides')" class="pages">
                     <i class="iconsax sidebar-icon" data-icon="car"> </i>
-                    <h3>My Ride</h3>
+                    <h3>Mis viajes</h3>
                 </a>
             </li>
-            <li>
+            <!-- <li>
                 <a href="user-app/notification.html" class="pages">
                     <i class="iconsax sidebar-icon" data-icon="bell-2"> </i>
                     <h3>Notification</h3>
@@ -44,9 +44,9 @@
                     <i class="iconsax sidebar-icon" data-icon="book-closed"> </i>
                     <h3>Template Pages</h3>
                 </a>
-            </li>
+            </li> -->
 
-            <li>
+            <!-- <li>
                 <a href="../elements/elements-page.html" class="pages">
                     <i class="iconsax sidebar-icon" data-icon="document-text-1"> </i>
                     <h3> Template Elements</h3>
@@ -72,14 +72,14 @@
                 <div class="switch-btn">
                     <input id="dark-switch" type="checkbox">
                 </div>
-            </li>
+            </li> -->
 
         </ul>
 
         <div class="bottom-sidebar">
-            <a href="login.html" class="pages">
+            <a  class="pages">
                 <i class="iconsax sidebar-icon" data-icon="logout-2"> </i>
-                <h3>Logout</h3>
+                <h3>Salir</h3>
             </a>
         </div>
     </div>

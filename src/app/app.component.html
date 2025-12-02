@@ -1,9 +1,12 @@
 
 <div class="app-container">
-<app-sidebar></app-sidebar>
- <app-header></app-header>
+<app-sidebar *ngIf="virtual.activeRoute !== 'login'"></app-sidebar>
+<app-header *ngIf="virtual.activeRoute !== 'login'"></app-header>
  <div class="app-content">
+ <app-login *ngIf="virtual.activeRoute === 'login'"></app-login>
  <app-home *ngIf="virtual.activeRoute === 'home'"></app-home>
+ <app-driver-home *ngIf="virtual.activeRoute === 'driver-home'"></app-driver-home>
+ <app-trip-start *ngIf="virtual.activeRoute === 'trip-start'"></app-trip-start>
  <app-myrides *ngIf="virtual.activeRoute === 'myrides'"></app-myrides>
 <app-search-location *ngIf="virtual.activeRoute === 'search-location'"></app-search-location>
 <app-select-auto *ngIf="virtual.activeRoute === 'select-auto'"></app-select-auto>
@@ -17,6 +20,6 @@
 <app-mobile-step1-service-picker *ngIf="virtual.activeRoute==='mobile-step1-service-picker'"></app-mobile-step1-service-picker>
 <app-mobile-step4-summary *ngIf="virtual.activeRoute==='mobile-step4-summary'"></app-mobile-step4-summary>
 </div>
-<app-bottombar></app-bottombar>
+<app-bottombar *ngIf="virtual.activeRoute !== 'login'"></app-bottombar>
 
 </div>

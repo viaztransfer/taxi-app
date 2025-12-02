@@ -3,7 +3,7 @@ import { BehaviorSubject } from 'rxjs';
 
 @Injectable({ providedIn: 'root' })
 export class VirtualRouterService {
-  private activeRouteSubject = new BehaviorSubject<string>('home');
+  private activeRouteSubject = new BehaviorSubject<string>('login');
   activeRoute$ = this.activeRouteSubject.asObservable();
 
   // 🔹 Pequeño almacén de estado (memoria + sessionStorage)

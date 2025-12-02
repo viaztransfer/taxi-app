@@ -1,0 +1,112 @@
+ <!-- header starts -->
+    <header id="header" class="auth-header">
+        <div class="custom-container">
+            <div class="header-panel  pb-0">
+                <img class="img-fluid mx-auto logo" src="../../assets/images/logo/user/user-logo-dark.png" alt="logo">
+                <img class="img-fluid mx-auto logo-dark" src="../../assets/images/logo/user/user-logo-dark.png"
+                    alt="logo">
+            </div>
+        </div>
+    </header>
+    <!-- header end -->
+
+    <!-- login page start -->
+   <div class="auth-bg-image-box">
+        <div class="auth-bg-image"></div>
+        <div class="auth-content-bg auth-content-bg-bottom">
+            <div class="custom-container white-background pb-2">
+                <div class="auth-title mt-0">
+                    <div class="loader-line"></div>
+                    <h6>Bienvenido a Via-z</h6>
+                    <p>Por favor ingresa tus datos para iniciar sesión</p>
+                </div>
+
+               <!--  <form class="auth-form mt-0">
+                    <div class="form-group">
+                        <label class="form-label mb-2" for="Inputemail">Correo Electronico</label>
+                        <div class="position-relative">
+                            <input type="email" class="form-control" id="Inputemail" placeholder="Correo Electronico">
+                            <i class="iconsax icon" data-icon="mail"></i>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="form-label mb-2" for="Inputpassword">Contraseña</label>
+                        <div class="position-relative">
+                            <input type="password" class="form-control" id="Inputpassword" placeholder="Contraseña">
+                            <i class="iconsax icon" data-icon="lock-2"></i>
+                        </div>
+                        <div class="show-hide toggler">
+                            <i class="iconsax eye-icon icon-eye" data-icon="eye"></i>
+                            <i class="iconsax eye-icon icon-eye-splash" data-icon="eye-slash"></i>
+                        </div>
+                    </div>
+                    <div class="flex-spacing">
+                        <div class="form-group mt-0">
+                            <div class="form-check">
+                                <input class="form-check-input m-0" type="checkbox" id="flexCheckDefault">
+                                <label class="form-check-label remember mb-0 fw-normal title-color"
+                                    for="flexCheckDefault">
+                                    Recordarme</label>
+                            </div>
+                        </div>
+                        <a class="forgot" href="">Olvidaste tu contraseña?</a>
+                    </div>
+
+                    <div class="division">
+                        <span>OR</span>
+                    </div>
+
+                    <div class="flex-align-center gap-3">
+                        <a href="" class="btn theme-btn google-btn w-50 flex-center gap-2">
+                            <img class="img-fluid google" src="../../assets/images/svg/google.svg" alt="google" /> with
+                            Google</a>
+
+                        <a href="" class="btn theme-btn google-btn w-50 flex-center gap-2">
+                            <img class="img-fluid google apple" src="../../assets/images/svg/apple.svg" alt="apple" />
+                            with
+                            Apple</a>
+                    </div>
+
+                    <a href="" class="btn theme-btn google-btn w-100 flex-center gap-2 mt-3">
+                        <img class="img-fluid google" src="https://themes.pixelstrap.com/pwa/taxido/assets/images/svg/mobile.svg" alt="mobile" /> 
+                        Numero de telefono</a>
+
+                    <a href="" class="btn theme-btn w-100 auth-btn mt-3">Iniciar sesión</a>
+                    <h6 class="content-color fw-normal my-3 text-center"> ¿Nuevo usuario?
+                        <a href="" class="title-color fw-medium">Registrarse</a>
+                    </h6>
+                </form> -->
+                <form class="auth-form mt-0" [formGroup]="form" (ngSubmit)="submit()">
+    <div class="form-group">
+        <label class="form-label mb-2">Correo Electrónico</label>
+        <div class="position-relative">
+            <input type="email" class="form-control" formControlName="email" placeholder="Correo Electrónico">
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label class="form-label mb-2">Contraseña</label>
+        <div class="position-relative">
+            <input type="password" class="form-control" formControlName="password" placeholder="Contraseña">
+        </div>
+    </div>
+
+    <div class="flex-spacing">
+        <label>
+            <input type="checkbox" formControlName="remember" />
+            Recordarme
+        </label>
+    </div>
+
+    <button type="submit" class="btn theme-btn w-100 auth-btn mt-3">
+        Iniciar sesión
+    </button>
+
+    <p *ngIf="error" class="error text-center">{{ error }}</p>
+</form>
+
+            </div>
+        </div>
+    </div>
+    <!-- login page end -->

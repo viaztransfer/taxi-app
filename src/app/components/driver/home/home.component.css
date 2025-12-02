@@ -1,0 +1,71 @@
+.modal-backdrop {
+  position: fixed;
+  inset: 0;
+  background: #00000088;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 999;
+}
+.modal-content {
+  background: white;
+  padding: 20px;
+  border-radius: 15px;
+  width: 90%;
+  max-width: 400px;
+}
+.profile-image {
+  position: relative;
+  width: 120px;
+  margin: auto;
+}
+.profile-image input {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+}
+.upload-icon {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  background: #eee;
+  padding: 6px;
+  border-radius: 100px;
+}
+.trip-status-badge {
+  display: inline-block;
+  padding: 6px 12px;
+  margin-bottom: 12px;
+  border-radius: 8px;
+  font-size: 13px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: .5px;
+}
+
+/* Colores según estado */
+.trip-status-badge.pendiente {
+  background: #ffeb99;
+  color: #b88700;
+}
+
+.trip-status-badge.iniciado {
+  background: #cfe6ff;
+  color: #0057b8;
+}
+
+.trip-status-badge.completado {
+  background: #d4f8d3;
+  color: #228b22;
+}
+
+.trip-status-badge.cancelado {
+  background: #ffe0e0;
+  color: #b30000;
+}
+
+/* .trip-status-badge['no show'],
+.trip-status-badge.no\ show {
+  background: #ddd;
+  color: #333;
+} */

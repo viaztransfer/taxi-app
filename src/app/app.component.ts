@@ -18,6 +18,9 @@ import { MobileStep2FormComponent } from './components/mobile-step2-form/mobile-
 import { MobileStep3SummaryComponent } from './components/mobile-step3-summary/mobile-step3-summary.component';
 import { MobileStep1ServicePickerComponent } from './components/mobile-step1-service-picker/mobile-step1-service-picker.component';
 import { MobileStep4SummaryComponent } from './components/mobile-step4-summary/mobile-step4-summary.component';
+import { LoginComponent } from './components/login/login.component';
+import { HomeComponent as DriverHomeComponent } from './components/driver/home/home.component';
+import { TripStartComponent } from './components/driver/trip-start/trip-start.component';
 
 @Component({
   selector: 'app-root',
@@ -38,7 +41,11 @@ import { MobileStep4SummaryComponent } from './components/mobile-step4-summary/m
     MobileStep2FormComponent,
     MobileStep3SummaryComponent,
     MobileStep1ServicePickerComponent,
-    MobileStep4SummaryComponent
+    MobileStep4SummaryComponent,
+    LoginComponent,
+    DriverHomeComponent,
+    TripStartComponent
+
   ],
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']   
@@ -47,6 +54,7 @@ export class AppComponent {
   title = 'taxi1';
 
   constructor(
-    public virtual: VirtualRouterService
+    public virtual: VirtualRouterService,
+    
   ){}
 }
